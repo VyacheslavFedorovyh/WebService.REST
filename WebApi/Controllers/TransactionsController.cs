@@ -50,6 +50,15 @@ namespace WebApi.Controllers
 
 		#region Statistic
 
+		// GET: StatisticAll?userID=3&date=2021-01-06
+		[HttpGet("StatisticAll")]
+		[CustomExceptionFilterAttribute]
+		public IActionResult StatisticAll(long? userID, DateTime? date)
+		{
+			var data = _methods.StatisticTransactionAll(userID, date);
+			return Ok(data);
+		}
+
 		// GET: Statistic?userID=3&date=2021-01-06
 		[HttpGet("Statistic")]
 		[CustomExceptionFilterAttribute]

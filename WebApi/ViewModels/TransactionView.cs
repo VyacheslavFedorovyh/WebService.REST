@@ -27,6 +27,6 @@ namespace WebApi.ViewModels
         /// <summary>
         /// Ид транзакции
         /// </summary>
-        public Guid TransactionId { get; set; }    
+        public Guid TransactionId { get; set; }
     }
 }

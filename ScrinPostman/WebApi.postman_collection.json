@@ -108,6 +108,36 @@
 			"response": []
 		},
 		{
+			"name": "StatisticAll UserID=3;OnDate=2021-01-06",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/StatisticAll?userID=3&date=2021-01-06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"StatisticAll"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3"
+						},
+						{
+							"key": "date",
+							"value": "2021-01-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "StatisticIn In=2021-01-06",
 			"request": {
 				"method": "GET",

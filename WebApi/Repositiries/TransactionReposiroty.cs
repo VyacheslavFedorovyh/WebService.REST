@@ -60,7 +60,7 @@ namespace WebApi.Repositiries
 		{
 			try
 			{
-				var rezult = _context.Transactions
+				var result = _context.Transactions
 					.Where(w => (userID != null ? w.User.UserID == userID.Value : false)
 					&& (fromDate != null ? w.TransactionTime.Date >= fromDate.Value.Date : false)
 					&& (toDate != null ? w.TransactionTime.Date <= toDate.Value.Date : false)).Select(s =>
@@ -73,8 +73,8 @@ namespace WebApi.Repositiries
 						TransactionId = s.TransactionID
 					}).ToList();
 
-				if (rezult.Count == 0) { throw new AppExeption("История операций по заданным параметрам не найдена."); }
-				return rezult;
+				if (result.Count == 0) { throw new AppExeption("История операций по заданным параметрам не найдена."); }
+				return result;
 			}
 			catch (Exception exc)
 			{
@@ -99,6 +99,40 @@ namespace WebApi.Repositiries
 					}).ToList();
 
 				if (result.Count == 0) { throw new AppExeption("История операций по заданным параметрам не найдена."); }
+				return result;
+			}
+			catch (Exception exc)
+			{
+				throw new AppExeption(exc.Message, exc);
+			}
+		}
+
+		public TransactionStatisticView StatisticTransactionAll(long? userID, DateTime? date)
+		{
+			try
+			{
+				var result = new TransactionStatisticView();
+				var transactions = _context.Transactions
+					.Where(w => (userID != null ? w.User.UserID == userID.Value : false)
+					&& (date != null ? DateTime.Compare(w.TransactionTime, date.Value) == 0 : false)).Select(s =>
+					new TransactionStatisticView()
+					{
+						UserId = s.UserId,
+						Amount = s.Amount
+					}).ToList();
+
+				if (transactions.Count == 0) { throw new AppExeption("История операций по заданным параметрам не найдена."); }
+
+				result.UserId = transactions.FirstOrDefault().UserId;
+
+				foreach (var transaction in transactions)
+				{
+					if (transaction.Amount > 0)
+						result.AmountIn += transaction.Amount;
+					else
+						result.AmountOut += transaction.Amount;
+				}
+
 				return result;
 			}
 			catch (Exception exc)
@@ -144,7 +178,7 @@ namespace WebApi.Repositiries
 				if (user != null)
 				{
 					var account = user.Account + amount;
-					if(account < 0)
+					if (account < 0)
 						throw new AppExeption("Недостаточно средств на счету.");
 
 					transaction = new Transaction(transactionTime, userID.Value, notes, account);

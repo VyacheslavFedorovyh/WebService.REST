@@ -38,6 +38,14 @@ namespace WebApi.Interfaces
 		List<TransactionView> StatisticTransaction(long? userID, DateTime? date);
 
 		/// <summary>
+		/// Выводит статистику за день по работе сервиса в разрезе пользователя
+		/// </summary>
+		/// <param name="userID">Ид пользователя</param>
+		/// <param name="date">Дата</param>
+		/// <returns></returns>
+		TransactionStatisticView StatisticTransactionAll(long? userID, DateTime? date);
+
+		/// <summary>
 		/// Выводит статистику за день по работе сервиса в разрезе для всех пользователей системы сумма приходов или расходов
 		/// </summary>
 		/// <param name="Date">Дата</param>

@@ -65,6 +65,19 @@ namespace xUnitTest
 		}
 
 		[Fact]
+		public async Task TestGetStatisticTransactionAll()
+		{
+			// Arrange
+			var request = "/api/StatisticAll?userID=3&date=2021-01-06";
+
+			// Act
+			var response = await Client.GetAsync(request);
+
+			// Assert
+			response.EnsureSuccessStatusCode();
+		}
+
+		[Fact]
 		public async Task TestGetStatisticTransaction()
 		{
 			// Arrange
