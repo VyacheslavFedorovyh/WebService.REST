@@ -115,7 +115,7 @@ namespace WebApi.Repositiries
 				var transactions = _context.Transactions
 					.Where(w => (userID != null ? w.User.UserID == userID.Value : false)
 					&& (date != null ? DateTime.Compare(w.TransactionTime, date.Value) == 0 : false)).Select(s =>
-					new TransactionStatisticView()
+					new TransactionView()
 					{
 						UserId = s.UserId,
 						Amount = s.Amount

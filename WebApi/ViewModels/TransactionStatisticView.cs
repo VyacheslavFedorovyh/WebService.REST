@@ -13,10 +13,6 @@ namespace WebApi.ViewModels
         /// </summary>
         public long UserId { get; set; }
         /// <summary>
-        /// Все транзакции
-        /// </summary>
-        public int Amount { get; set; }
-        /// <summary>
         /// Сумма приходов
         /// </summary>
         public int AmountIn { get; set; }
