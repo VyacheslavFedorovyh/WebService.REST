@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "648f0824-e14c-43e8-906e-c4a5d1c1e5d4",
+		"name": "WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAll Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/Transactions",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"Transactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Balance UserID=3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/Balance?userID=3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"Balance"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Balance UserID=5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/Balance?userID=5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"Balance"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistic UserID=3;OnDate=2021-01-06",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/Statistic?userID=3&date=2021-01-06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"Statistic"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3"
+						},
+						{
+							"key": "date",
+							"value": "2021-01-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StatisticIn In=2021-01-06",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/StatisticIn?inDate=2021-01-06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"StatisticIn"
+					],
+					"query": [
+						{
+							"key": "inDate",
+							"value": "2021-01-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StatisticOut Out=2021-01-06",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/StatisticOut?outDate=2021-01-06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"StatisticOut"
+					],
+					"query": [
+						{
+							"key": "outDate",
+							"value": "2021-01-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History UserID=3;FromDate=2021-01-04;ToDate=2021-01-08",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/History?userID=3&fromDate=2021-01-04&toDate=2021-01-08",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"History"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3"
+						},
+						{
+							"key": "fromDate",
+							"value": "2021-01-04"
+						},
+						{
+							"key": "toDate",
+							"value": "2021-01-08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTransaction userID=3;Amount=-3000;Notes=Снятие",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/AddTransaction?userID=3&amount=-3000&notes=Снятие",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"AddTransaction"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "3"
+						},
+						{
+							"key": "amount",
+							"value": "-3000"
+						},
+						{
+							"key": "notes",
+							"value": "Снятие"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTransaction userID=5;Amount=26500;Notes=Снятие наличных",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/AddTransaction?userID=5&amount=-26500&notes=Снятие наличных",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"AddTransaction"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "5"
+						},
+						{
+							"key": "amount",
+							"value": "-26500"
+						},
+						{
+							"key": "notes",
+							"value": "Снятие наличных"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTransaction userID=1;Amount=6000;Notes=Получил",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44341/api/AddTransaction?userID=1&Amount=6000&Notes=Получил",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44341",
+					"path": [
+						"api",
+						"AddTransaction"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "1"
+						},
+						{
+							"key": "Amount",
+							"value": "6000"
+						},
+						{
+							"key": "Notes",
+							"value": "Получил"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
